@@ -5,6 +5,7 @@ import { readdir } from "node:fs/promises";
 import { createReadStream, createWriteStream } from "node:fs";
 import { pipeline } from "node:stream/promises";
 import { format, parse } from "fast-csv";
+import pino from 'pino';
 
 import { ParseTransform } from "../lib/parsing.js";
 
