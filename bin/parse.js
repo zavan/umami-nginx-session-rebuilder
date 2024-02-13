@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
 import { resolve } from "node:path";
-import { readdir } from "node:fs/promises";
 import { createReadStream, createWriteStream } from "node:fs";
 import { pipeline } from "node:stream/promises";
 import { format, parse } from "fast-csv";
 import pino from 'pino';
 
+import { sortedReadDir } from "../lib/reading.js";
 import { ParseTransform } from "../lib/parsing.js";
 
 const DEFAULT_SOURCE = 'files/filtered';
@@ -27,7 +27,7 @@ function buildLogger(name) {
 }
 
 async function main(source, destination) {
-  const files = await readdir(source, { withFileTypes: true });
+  const files = await sortedReadDir(source);
 
   for (const file of files) {
     if (!file.isFile() || !file.name.endsWith('.csv')) continue;

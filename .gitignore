@@ -140,5 +140,9 @@ files/identified/*
 !files/identified/.gitkeep
 files/matched/*
 !files/matched/.gitkeep
+files/saved/*
+!files/saved/.gitkeep
 
+geo/*
+!geo/.gitkeep
 !logs/.gitkeep

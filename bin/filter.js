@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 import { resolve } from "node:path";
-import { readdir } from "node:fs/promises";
 import { createReadStream, createWriteStream } from "node:fs";
 
+import { sortedReadDir } from "../lib/reading.js";
 import { filterToCSV } from "../lib/filtering.js";
 
 const DEFAULT_SOURCE = 'files/raw';
 const DEFAULT_DESTINATION = 'files/filtered';
 
 async function main(source, destination) {
-  const files = await readdir(source, { withFileTypes: true });
+  const files = await sortedReadDir(source);
 
   for (const file of files) {
     if (!file.isFile() || !file.name.includes('.log')) continue;
