@@ -1,0 +1,23 @@
+{
+  "name": "umami-nginx-session-rebuilder",
+  "version": "1.0.0",
+  "description": "Rebuilds sessions in Umami database from Umami NGINX access logs",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Felipe Zavan <felipe@zavan.me>",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "3.0.0",
+    "dotenv": "^16.4.1",
+    "fast-csv": "^5.0.0",
+    "next-basics": "0.39.0",
+    "pino": "^8.18.0",
+    "pino-pretty": "^10.3.1",
+    "postgres": "^3.4.3",
+    "prexit": "^2.2.0",
+    "uuid": "9.0.1"
+  }
+}
