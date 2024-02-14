@@ -5,7 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js"
+    "filter": "node bin/filter.js",
+    "parse": "node bin/parse.js",
+    "identify": "node bin/identify.js",
+    "match": "node bin/match.js",
+    "save": "node bin/save.js"
   },
   "author": "Felipe Zavan <felipe@zavan.me>",
   "license": "MIT",
